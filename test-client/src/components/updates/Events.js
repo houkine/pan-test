@@ -108,6 +108,7 @@ const useStyles = makeStyles((theme) => ({
         marginLeft:10,
         marginRight:10,
         borderRadius: 10,
+        height:720,
     },
     calendar:{
         marginBottom:10,

@@ -75,7 +75,7 @@ const Lifecycle = (props) => {
                         </Box>
                     </Box>
                     <Box className={classes.textField}>
-                        <TextField  className={classes.textfield} placeholder={"Post an Update..."} variant="outlined" fullWidth={true}/>
+                        <TextField className={classes.textfield} placeholder={"Post an Update..."} variant="outlined" fullWidth={true}/>
                     </Box>
                     <Box bgcolor='#F5F3F2'>
                         {
@@ -96,7 +96,7 @@ const Record = (props) => {
     const classes = useStyles();
     return(
         <Box className={classes.box}>
-            <Box className={classes.box_record} color="#F5F3F2">
+            <Box className={classes.box_record}>
                 <Box>
                     <Avatar src={props.update.u_image} />
                 </Box>
@@ -121,7 +121,7 @@ const Record = (props) => {
                     {props.update.up_content}
                 </Typography>
             </div>
-            <Box className={classes.record_buttom} bgcolor='#F5F3F2'>
+            <Box className={classes.record_buttom}>
                 <Box className={classes.box_buttom}>
                     <IconButton color="default" >
                         <FavoriteBorderIcon />
@@ -167,11 +167,12 @@ const useStyles = makeStyles((theme) => ({
         marginLeft:200,
         borderRadius: 10,
         height:600,
-        backgroundColor:'#FFFFFF',
     },
     textField:{
         marginTop:10,
         marginBottom:10,
+        backgroundColor:'#FFFFFF',
+        borderWidth:0,
     },
     box_left:{
         borderRadius: 10,
@@ -214,8 +215,8 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: 10,
         display:"flex",
         margin:5,
-        backgroundColor:'#FFFFFF',
-        width:100,
+        backgroundColor:'#f5f3f2',
+        width:120,
     },
     box_buttom_box:{
         textTransform: "none",
@@ -223,7 +224,6 @@ const useStyles = makeStyles((theme) => ({
     },
     record_buttom:{
         display:"flex",
-        backgroundColor:'#F5F3F2',
     },
     record_time:{
         // float:'right',
