@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     width:250,
     height:50,
-    borderRadius: 8,
+    borderRadius: 10,
     backgroundColor:'#F5F3F2',
     borderWidth:0,
     margin:10,
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   current_root: {
     alignItems: 'center',
     width:250,
-    borderRadius: 8,
+    borderRadius: 10,
     backgroundColor:'#F5F3F2',
     borderWidth:0,
     margin:10,

@@ -100,6 +100,7 @@ const useStyles = makeStyles((theme) => ({
     content:{
         backgroundColor:'#F5F3F2',
         height:725,
+        borderRadius: 10,
     },
     avatar:{
         width: theme.spacing(13),

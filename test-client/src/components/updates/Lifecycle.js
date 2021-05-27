@@ -58,8 +58,8 @@ const Lifecycle = (props) => {
                 <ProgressBar/>
             </div>
             <Box className={classes.background}>
-                <Box>
-                    <img src={background}></img>
+                <Box className={classes.background_img}> 
+                    <img className={classes.background_img} src={background}></img>
                 </Box>
                 <Box className={classes.records_field}>
                     <Box display='flex' flexDirection='row'>
@@ -96,7 +96,7 @@ const Record = (props) => {
     const classes = useStyles();
     return(
         <Box className={classes.box}>
-            <Box className={classes.box_record}>
+            <Box className={classes.box_record} color="#F5F3F2">
                 <Box>
                     <Avatar src={props.update.u_image} />
                 </Box>
@@ -152,22 +152,29 @@ const useStyles = makeStyles((theme) => ({
       alignItems: 'center',
       width:1100,
       backgroundColor:'#F5F3F2',
-      borderRadius: 8,
+      borderRadius: 10,
       borderWidth:0,
       margin:10,
+    },
+    background_img:{
+        borderTopLeftRadius:10,
+        borderTopRightRadius:10,
+        width:1100,
     },
     records_field:{
         width:600,
         marginTop:-20,
         marginLeft:200,
+        borderRadius: 10,
         height:600,
+        backgroundColor:'#FFFFFF',
     },
     textField:{
         marginTop:10,
         marginBottom:10,
     },
     box_left:{
-        borderRadius: 8,
+        borderRadius: 10,
         textAlign:"center",
         borderBottomColor:"#0070C3",
         borderBottomWidth:2,
@@ -175,7 +182,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor:'#FFFFFF',
     },
     box_right:{
-        borderRadius: 8,
+        borderRadius: 10,
         width:150,
         textAlign:"center",
         padding:10,
@@ -189,10 +196,10 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor:"#0070c3",
     },
     textfield:{
-        borderRadius: 8,
+        borderRadius: 10,
     },
     box:{
-        borderRadius: 8,
+        borderRadius: 10,
         backgroundColor:'#FFFFFF',
         marginTop:10,
     },
@@ -204,10 +211,10 @@ const useStyles = makeStyles((theme) => ({
         
     },
     box_buttom:{
-        borderRadius: 8,
+        borderRadius: 10,
         display:"flex",
         margin:5,
-        backgroundColor:'#F5F3F2',
+        backgroundColor:'#FFFFFF',
         width:100,
     },
     box_buttom_box:{
@@ -216,6 +223,7 @@ const useStyles = makeStyles((theme) => ({
     },
     record_buttom:{
         display:"flex",
+        backgroundColor:'#F5F3F2',
     },
     record_time:{
         // float:'right',

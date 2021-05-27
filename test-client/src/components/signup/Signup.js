@@ -10,8 +10,8 @@ import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import Container from '@material-ui/core/Container'
 import { Box } from "@material-ui/core";
+import InputBase from '@material-ui/core/InputBase'
 
-import './signup.css'
 import axios from "../utils/axiosInstance";
 import qs from 'qs'
 
@@ -21,9 +21,9 @@ import logo from '../../assert/img/logo.png'
 
 const Signup = (props) => {
     const styles = useStyles();
-    const [u_email,setu_email] = useState('')
-    const [u_name,setu_name] = useState('')
-    const [u_password,setu_password] = useState('')
+    const [u_email,setu_email] = useState('susiewilson@emailaddress.com')
+    const [u_name,setu_name] = useState('Susie Wilson')
+    const [u_password,setu_password] = useState('1234')
     const [secret,setSecret] = useState('password')
 
     const submit = () =>{
@@ -35,7 +35,7 @@ const Signup = (props) => {
     return(
         <Container className={styles.container} fixed>
             <Box className={styles.content} >
-                <Box>
+                <Box className={styles.logo}>
                     <img src={logo}></img>
                 </Box>
                 <Box className={styles.texts}>
@@ -44,7 +44,7 @@ const Signup = (props) => {
                     </Typography>
                 </Box>
                 <Box >
-                    <Box className={styles.textField} >
+                    {/* <Box className={styles.textField} >
                         <TextField
                             id="u_email"
                             value={u_email}
@@ -65,6 +65,25 @@ const Signup = (props) => {
                             }}
                             fullWidth={true}
                         />
+                    </Box> */}
+                    <Box>
+                        <Box className={styles.box_normal} border={1} display="flex">
+                            <Typography variant="body2" color="primary">
+                                Email
+                            </Typography>
+                            <InputBase 
+                                value={u_email}
+                                textAlign="right"
+                                onChange={(text)=>{setu_email(text.target.value)}}
+                                fullWidth
+                                
+                            />
+                        </Box>
+                        <Box className={styles.box_normal}>
+                            <Typography variant="body2">
+                                Actions
+                            </Typography>
+                        </Box>
                     </Box>
                     <Box className={styles.passwordField} >
                         <TextField
@@ -98,6 +117,14 @@ Signup.propTypes = {
 }
 const useStyles = makeStyles({
     container: {
+        borderRadius: 8,
+    },
+    box_normal:{
+        borderRadius: 8,
+        // textAlign:"center",
+        borderBottomColor:"#0070C3",
+        borderBottomWidth:2,
+        padding:10,
     },
     content: {
         width:800,

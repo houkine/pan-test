@@ -17,6 +17,9 @@ const Router = (props) =>{
     return(
       <BrowserRouter>
         <Switch>
+        <Route exact path="/">
+            <Updates />
+          </Route>
           <Route exact path="/signup">
             <Signup />
           </Route>

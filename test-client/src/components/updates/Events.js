@@ -3,6 +3,7 @@ import Box from '@material-ui/core/Box'
 import { makeStyles } from '@material-ui/core/styles'
 import Divider from '@material-ui/core/Divider'
 import Typography from '@material-ui/core/Typography'
+import { createMuiTheme,MuiThemeProvider} from '@material-ui/core/styles'
 
 import Proptypes from 'prop-types'
 import Calendar from 'react-calendar'
@@ -10,6 +11,14 @@ import 'react-calendar/dist/Calendar.css'
 
 
 import axios from "../utils/axiosInstance"
+
+const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: '#9E9D9C',
+      },
+    },
+});
 
 const Events = (props) => {
     const classes = useStyles();
@@ -43,11 +52,11 @@ const Events = (props) => {
         <Box className={classes.container}>
             <Box className={classes.content}>
                 <Box>
-                    <Calendar></Calendar>
+                    <Calendar className={classes.calendar}></Calendar>
                 </Box>
                 <Divider />
                 <Box>
-                    <Typography variant="h6">
+                    <Typography variant="subtitle1">
                         Upcoming Events
                     </Typography>
                 </Box>
@@ -75,9 +84,11 @@ const Event = (props) =>{
                 </Typography>
             </Box>
             <Box>
-                <Typography variant="body2">
-                    {props.event.e_time}
-                </Typography>
+                <MuiThemeProvider theme={theme}>
+                    <Typography variant="body2" color="primary">
+                        {props.event.e_time}
+                    </Typography>
+                </MuiThemeProvider>
             </Box>
         </Box>
     )
@@ -92,10 +103,15 @@ const useStyles = makeStyles((theme) => ({
     },
     content:{
         backgroundColor:'#FFFFFF',
-        marginTop:90,
-        width:200,
+        marginTop:100,
+        width:230,
         marginLeft:10,
         marginRight:10,
+        borderRadius: 10,
+    },
+    calendar:{
+        marginBottom:10,
+        borderRadius: 10,
     },
     event:{
         margin: 10,
@@ -103,6 +119,8 @@ const useStyles = makeStyles((theme) => ({
     event_container:{
         margin: 10,
         padding:10,
+        borderRadius: 10,
+        backgroundColor:'#F5F3F2',
     },
 }));
 
