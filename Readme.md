@@ -26,10 +26,11 @@ this app is currently developed under Ubuntu system. All instructions listed are
 
 + client  
 
->npm install -g create-react-app
->npm install @material-ui/core
->npm install @material-ui/icons
->npm install axios --save
+>npm install -g create-react-app  
+>npm install @material-ui/core  
+>npm install @material-ui/icons  
+>npm install axios --save  
+>npm install react-calendar
 
 ## project structure
 
